@@ -65,14 +65,15 @@ type SAMLServiceProvider struct {
 	// provider use specific authentication mechanisms. Leaving this unset will
 	// permit the identity provider to choose the auth method. To maximize compatibility
 	// with identity providers it is recommended to leave this unset.
-	RequestedAuthnContext   *RequestedAuthnContext
-	AudienceURI             string
-	IDPCertificateStore     dsig.X509CertificateStore
-	NameIdFormat            string
-	ValidateEncryptionCert  bool
-	SkipSignatureValidation bool
-	AllowMissingAttributes  bool
-	Clock                   *dsig.Clock
+	RequestedAuthnContext    *RequestedAuthnContext
+	AudienceURI              string
+	IDPCertificateStore      dsig.X509CertificateStore
+	NameIdFormat             string
+	ValidateEncryptionCert   bool
+	SkipSignatureValidation  bool
+	SkipConditionsValidation bool
+	AllowMissingAttributes   bool
+	Clock                    *dsig.Clock
 
 	// Required encryption key and default signing key.
 	// Deprecated: Use SetSPKeyStore instead of setting or reading this field.
